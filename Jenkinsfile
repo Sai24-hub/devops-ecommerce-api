@@ -24,5 +24,13 @@ pipeline {
                 }
             }
         }
+
+        stage('Docker Build') {
+            steps {
+                dir('ecommerce-api') {
+                    bat 'docker build -t ecommerce-api:1.0 .'
+                }
+            }
+        }
     }
 }
